@@ -1,0 +1,562 @@
+/* contact.css - Styles for Contact Page */
+
+body {
+    font-family: 'Syne', Arial, sans-serif;
+    background: #ffffff;
+    color: #1a1a1a;
+    margin: 0;
+    padding: 0;
+}
+
+.contact-hero {
+    background:
+        linear-gradient(135deg, rgba(16,185,129,0.25) 0%, rgba(255,255,255,0.85) 100%),
+        url('contact-banner.jpeg') center center/cover no-repeat;
+    height: 100vh;
+    min-height: 400px;
+    width: 100vw;
+    padding: 0;
+    text-align: center;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-hero__title {
+    font-size: 3.5rem;
+    font-weight: 900;
+    color: #1a1a1a;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    line-height: 1.1;
+}
+
+.contact-hero__subtitle {
+    font-size: 1.7rem;
+    color: #4a5568;
+    margin-bottom: 0;
+    text-align: center;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+.contact-section {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 40px 20px 60px;
+    background: #ffffff;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 992px) {
+    .contact-hero__title {
+        font-size: 3rem;
+    }
+    
+    .contact-hero__subtitle {
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .contact-section {
+        flex-direction: column;
+        align-items: center;
+        padding: 30px 15px 45px;
+    }
+    
+    .contact-hero__title {
+        font-size: 2.5rem;
+        padding: 0 15px;
+    }
+    
+    .contact-hero__subtitle {
+        font-size: 1.3rem;
+        padding: 0 15px;
+    }
+    
+    .contact-hero {
+        min-height: 300px;
+    }
+}
+
+.contact-section {
+    position: relative;
+}
+
+.contact-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 70% 30%, rgba(16, 185, 129, 0.03) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.contact-section__container {
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow:
+        0 4px 24px 0 rgba(0,0,0,0.08),
+        0 0 120px 40px rgba(16,185,129,0.10);
+    padding: 40px 32px 32px 32px;
+    max-width: 480px;
+    width: 100%;
+    border: 1px solid #e2e8f0;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.contact-form__group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.contact-form__label {
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 2px;
+}
+
+.contact-form__input,
+.contact-form__textarea {
+    padding: 12px 14px;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 1.5rem;
+    font-family: inherit;
+    background: #f8f9fa;
+    color: #1a1a1a;
+    transition: border 0.2s;
+}
+
+.contact-form__input:focus,
+.contact-form__textarea:focus {
+    border-color: #10b981;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+}
+
+.contact-form__textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+/* Remove custom styles from .contact-form__submit that override .custom-btn */
+.contact-form__submit {
+  /* Only inherit from .custom-btn */
+  background: none;
+  color: inherit;
+  border: none;
+  border-radius: inherit;
+  font: inherit;
+  padding: 0;
+  box-shadow: none;
+  transition: none;
+}
+
+.contact-form__submit:hover {
+    background: linear-gradient(135deg, #059669 0%, #047857 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(16, 185, 129, 0.4);
+}
+
+.contact-form__message {
+    margin-top: 10px;
+    font-size: 1rem;
+    min-height: 24px;
+    transition: color 0.2s;
+}
+
+.contact-form__message.success {
+    color: #10b981;
+}
+
+.contact-form__message.error {
+    color: #ef4444;
+}
+
+/* Dialog Box Styles */
+.dialog-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    animation: fadeIn 0.3s ease-out;
+}
+
+.dialog-box {
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+    max-width: 500px;
+    width: 90%;
+    margin: 20px;
+    animation: slideIn 0.3s ease-out;
+    border: 1px solid #e2e8f0;
+}
+
+.dialog-content {
+    padding: 40px;
+    text-align: center;
+}
+
+.dialog-title {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #1a1a1a;
+    margin-bottom: 20px;
+}
+
+.dialog-message {
+    font-size: 1.5rem;
+    line-height: 1.6;
+    color: #4a5568;
+    margin-bottom: 20px;
+}
+
+.dialog-signature {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 10px;
+    line-height: 1.4;
+}
+
+.dialog-team {
+    font-size: 1.3rem;
+    color: #10b981;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+.dialog-close {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    color: #ffffff;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 24px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    box-shadow: 0 4px 20px rgba(16, 185, 129, 0.3);
+}
+
+.dialog-close:hover {
+    background: linear-gradient(135deg, #059669 0%, #047857 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(16, 185, 129, 0.4);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { 
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to { 
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 600px) {
+    .contact-section__container {
+        padding: 24px 8px 16px 8px;
+        max-width: 98vw;
+    }
+    .contact-hero {
+        padding: 36px 0 18px 0;
+    }
+    .contact-hero__title {
+        font-size: 2rem;
+    }
+    .dialog-content {
+        padding: 30px 20px;
+    }
+    .dialog-title {
+        font-size: 1.5rem;
+    }
+    .dialog-message {
+        font-size: 1rem;
+    }
+} 
+
+/* Animated Send Message Button Styles */
+.type--C {
+  --line_color: #10b981;
+  --back_color: #f0f9f4;
+}
+.button {
+  position: relative;
+  z-index: 0;
+  width: 240px;
+  height: 56px;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+  color: var(--line_color);
+  letter-spacing: 2px;
+  transition: all 0.3s ease;
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.button__text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 2;
+}
+.button::before,
+.button::after,
+.button__text::before,
+.button__text::after {
+  content: "";
+  position: absolute;
+  height: 3px;
+  border-radius: 2px;
+  background: var(--line_color);
+  transition: all 0.5s ease;
+}
+.button::before {
+  top: 0;
+  left: 54px;
+  width: calc(100% - 56px * 2 - 16px);
+}
+.button::after {
+  top: 0;
+  right: 54px;
+  width: 8px;
+}
+.button__text::before {
+  bottom: 0;
+  right: 54px;
+  width: calc(100% - 56px * 2 - 16px);
+}
+.button__text::after {
+  bottom: 0;
+  left: 54px;
+  width: 8px;
+}
+.button__line {
+  position: absolute;
+  top: 0;
+  width: 56px;
+  height: 100%;
+  overflow: hidden;
+}
+.button__line::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 150%;
+  height: 100%;
+  box-sizing: border-box;
+  border-radius: 300px;
+  border: solid 3px var(--line_color);
+}
+.button__line:nth-child(1),
+.button__line:nth-child(1)::before {
+  left: 0;
+}
+.button__line:nth-child(2),
+.button__line:nth-child(2)::before {
+  right: 0;
+}
+.button:hover {
+  letter-spacing: 6px;
+}
+.button:hover::before,
+.button:hover .button__text::before {
+  width: 8px;
+}
+.button:hover::after,
+.button:hover .button__text::after {
+  width: calc(100% - 56px * 2 - 16px);
+}
+.button__drow1,
+.button__drow2 {
+  position: absolute;
+  z-index: -1;
+  border-radius: 16px;
+  transform-origin: 16px 16px;
+  background: var(--back_color);
+}
+.button__drow1 {
+  top: -16px;
+  left: 40px;
+  width: 32px;
+  height: 0;
+  transform: rotate(30deg);
+}
+.button__drow2 {
+  top: 44px;
+  left: 77px;
+  width: 32px;
+  height: 0;
+  transform: rotate(-127deg);
+}
+.button__drow1::before,
+.button__drow1::after,
+.button__drow2::before,
+.button__drow2::after {
+  content: "";
+  position: absolute;
+  background: var(--back_color);
+}
+.button__drow1::before {
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 32px;
+  border-radius: 16px;
+  transform-origin: 16px 16px;
+  transform: rotate(-60deg);
+}
+.button__drow1::after {
+  top: -10px;
+  left: 45px;
+  width: 0;
+  height: 32px;
+  border-radius: 16px;
+  transform-origin: 16px 16px;
+  transform: rotate(69deg);
+}
+.button__drow2::before {
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 32px;
+  border-radius: 16px;
+  transform-origin: 16px 16px;
+  transform: rotate(-146deg);
+}
+.button__drow2::after {
+  bottom: 26px;
+  left: -40px;
+  width: 0;
+  height: 32px;
+  border-radius: 16px;
+  transform-origin: 16px 16px;
+  transform: rotate(-262deg);
+}
+.button:hover .button__drow1 {
+  animation: drow1 ease-in 0.06s;
+  animation-fill-mode: forwards;
+}
+.button:hover .button__drow1::before {
+  animation: drow2 linear 0.08s 0.06s;
+  animation-fill-mode: forwards;
+}
+.button:hover .button__drow1::after {
+  animation: drow3 linear 0.03s 0.14s;
+  animation-fill-mode: forwards;
+}
+.button:hover .button__drow2 {
+  animation: drow4 linear 0.06s 0.2s;
+  animation-fill-mode: forwards;
+}
+.button:hover .button__drow2::before {
+  animation: drow3 linear 0.03s 0.26s;
+  animation-fill-mode: forwards;
+}
+.button:hover .button__drow2::after {
+  animation: drow5 linear 0.06s 0.32s;
+  animation-fill-mode: forwards;
+}
+@keyframes drow1 {
+  0% { height: 0; }
+  100% { height: 100px; }
+}
+@keyframes drow2 {
+  0% { width: 0; opacity: 0; }
+  10% { opacity: 0; }
+  11% { opacity: 1; }
+  100% { width: 120px; }
+}
+@keyframes drow3 {
+  0% { width: 0; }
+  100% { width: 80px; }
+}
+@keyframes drow4 {
+  0% { height: 0; }
+  100% { height: 120px; }
+}
+@keyframes drow5 {
+  0% { width: 0; }
+  100% { width: 124px; }
+}
+.container {
+  width: auto;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.button:not(:last-child) {
+  margin-bottom: 64px;
+} 
+
+/* Modern animated submit button for contact form */
+.contact-submit-btn {
+  display: inline-block;
+  width: auto;
+  min-width: 0;
+  background: #fff;
+  color: var(--accent-color, #10b981);
+  border: 2px solid var(--accent-color, #10b981);
+  border-radius: 4px;
+  font-family: 'Syne', 'Montserrat', Arial, sans-serif;
+  font-size: 1em;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  padding: 8px 14px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  box-shadow: none;
+  outline: none;
+}
+.contact-submit-btn:hover {
+  background: var(--accent-color, #10b981);
+  color: #fff;
+}
+.contact-submit-btn span {
+  padding: 0;
+  color: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  letter-spacing: inherit;
+  transition: none;
+  animation: none;
+} 
