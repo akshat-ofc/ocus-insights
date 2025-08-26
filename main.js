@@ -189,18 +189,24 @@ document.querySelectorAll('.ebook-card__buy').forEach(function(btn) {
   });
 });
 
-// =============== EBOOK BUY BUTTON HANDLER ===============
+// =============== EBOOK BUY/DOWNLOAD BUTTON HANDLER ===============
 document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.ebook-card__buy').forEach(button => {
     button.addEventListener('click', (e) => {
       const card = e.target.closest('.ebook-card');
       const title = card.dataset.title;
+      const price = card.dataset.price;
       if (title) {
-        window.location.href = `ebook.html?title=${encodeURIComponent(title)}`;
+        if (price === 'Free' && title === 'The Stoic 6') {
+          // Handle free download directly
+          const downloadLink = 'TheStoic6.pdf'; // This should be the actual path to your PDF file
+          window.location.href = downloadLink;
+        } else {
+          window.location.href = `ebook.html?title=${encodeURIComponent(title)}`;
+        }
       }
     });
   });
-});
 
 // =============== INTERSECTION OBSERVER FOR ANIMATIONS ===============
 function observePostCards() {
