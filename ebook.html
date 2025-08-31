@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eBook Details | Ocus Insights</title>
+    <meta name="description" content="View eBook details, cover, and price. Buy your favorite eBook from Ocus Insights.">
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JQQEBPDQZD"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-JQQEBPDQZD');
+</script>
+    <style>
+        :root {
+            --primary-bg: #fff;
+            --text-primary: #1a1a1a;
+            --text-secondary: #4a5568;
+            --accent-color: #10b981;
+        }
+        
+        body {
+            font-family: 'Syne', sans-serif;
+            background: var(--primary-bg);
+            color: var(--text-primary);
+            margin: 0;
+            padding: 0;
+        }
+        .ebook-detail-container {
+            display: flex;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 80px auto;
+            background: #fff;
+            border-radius: 18px;
+            box-shadow: 0 4px 24px 0 rgba(16,185,129,0.08);
+            overflow: hidden;
+            min-height: 500px;
+            margin-bottom: 120px;
+            position: relative;
+            padding-bottom: 40px;
+        }
+        .ebook-detail-info {
+            flex: 1;
+            min-width: 300px;
+            padding: 3rem 2.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .ebook-detail-cover {
+            flex: 1;
+            min-width: 300px;
+            background: radial-gradient(circle, rgba(16,185,129,0.12) 0%, transparent 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+        .ebook-detail-cover img {
+            max-width: 100%;
+            max-height: 500px;
+            border-radius: 14px;
+            box-shadow: 0 8px 32px 0 rgba(16,185,129,0.10);
+            background: #fff;
+            object-fit: contain;
+        }
+        .ebook-detail-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 1.2rem;
+        }
+        .ebook-detail-author {
+            font-size: 1.1rem;
+            color: var(--accent-color);
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+        .ebook-detail-desc {
+            font-size: 1.15rem;
+            color: var(--text-secondary);
+            margin-bottom: 2.2rem;
+            line-height: 1.7;
+        }
+        .ebook-detail-price {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--accent-color);
+            margin-bottom: 2.2rem;
+        }
+        .ebook-detail-buy {
+            background-color: white;
+            color: black;
+            border-radius: 12px;
+            font-size: 17px;
+            font-weight: 500;
+            padding: 1em 2em;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+            border: 1.5px solid black;
+            box-shadow: 0 0 0 0 black;
+            font-family: 'Syne', sans-serif;
+            align-self: flex-start;
+            text-decoration: none;
+            outline: none !important;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .ebook-detail-buy:focus,
+        .ebook-detail-buy:active,
+        .ebook-detail-buy:focus-visible,
+        .ebook-detail-buy:-moz-focusring {
+            outline: none !important;
+            box-shadow: none !important;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .ebook-detail-buy:hover {
+            transform: translateY(-4px) translateX(-2px);
+            box-shadow: 2px 5px 0 0 black;
+            border-color: var(--accent-color);
+        }
+
+        @media (max-width: 768px) {
+            .ebook-detail-container {
+                flex-direction: column;
+                margin: 60px 20px;
+            }
+            .ebook-detail-info, .ebook-detail-cover {
+                padding: 2rem;
+            }
+            .ebook-detail-cover {
+                order: -1;
+                min-height: 300px;
+            }
+            .ebook-detail-buy {
+                align-self: center;
+                width: 100%;
+            }
+        }
+        
+        .scroll-arrow {
+            width: 40px;
+            height: 40px;
+            background: white;
+            border-radius: 50%;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 20px;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(16,185,129,0.15);
+            border: 2px solid rgba(16,185,129,0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            animation: float 2s ease-in-out infinite;
+            z-index: 10;
+        }
+        .scroll-arrow:hover {
+            transform: translateX(-50%) translateY(-5px);
+            box-shadow: 0 6px 16px rgba(16,185,129,0.25);
+            border-color: rgba(16,185,129,0.4);
+        }
+        .scroll-arrow svg {
+            width: 20px;
+            height: 20px;
+            fill: var(--accent-color);
+        }
+        @keyframes float {
+            0%, 100% {
+                transform: translateX(-50%) translateY(0);
+            }
+            50% {
+                transform: translateX(-50%) translateY(-10px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- The Stoic 6 eBook -->
+    <div class="ebook-detail-container" id="stoic6-block">
+        <div class="ebook-detail-info">
+            <div class="ebook-detail-title">The Stoic 6</div>
+            <div class="ebook-detail-author">Ocus Insights</div>
+            <div class="ebook-detail-desc">Explore framework for your startup empire, with real-world case studies and foundational aspects to strengthen core foundation. It can be seen basic but it is way impactful.</div>
+            <div class="ebook-detail-price">₹99</div>
+            <a href="https://payments.cashfree.com/forms/thestoic6" class="ebook-detail-buy">Invest</a>
+        </div>
+        <div class="ebook-detail-cover">
+            <img src="stoic.png" alt="The Stoic 6 eBook Cover">
+        </div>
+        <button class="scroll-arrow" aria-label="Scroll to testimonials" onclick="scrollToTestimonials()">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 16.586L4.707 9.293a1 1 0 011.414-1.414L12 13.758l5.879-5.879a1 1 0 111.414 1.414L12 16.586z"/>
+            </svg>
+        </button>
+    </div>
+
+    <!-- Unlock the Power of LinkedIn eBook -->
+    <div class="ebook-detail-container" id="linkedin-block" style="display:none">
+        <div class="ebook-detail-info">
+            <div class="ebook-detail-title">Unlock the Power of LinkedIn</div>
+            <div class="ebook-detail-author">Ocus Insights</div>
+            <div class="ebook-detail-desc">Master LinkedIn for business and personal branding. This hands-on guide covers profile optimization, content strategy, and proven networking tactics to unlock new opportunities and growth.</div>
+            <div class="ebook-detail-price">₹199</div>
+            <a href="https://payments.cashfree.com/forms/unlockthepoweroflinkedin" class="ebook-detail-buy">Invest</a>
+        </div>
+        <div class="ebook-detail-cover">
+            <img src="linkedin.png" alt="Unlock the Power of LinkedIn eBook Cover">
+        </div>
+        <button class="scroll-arrow" aria-label="Scroll to testimonials" onclick="scrollToTestimonials()">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 16.586L4.707 9.293a1 1 0 011.414-1.414L12 13.758l5.879-5.879a1 1 0 111.414 1.414L12 16.586z"/>
+            </svg>
+        </button>
+    </div>
+
+    <script>
+        function scrollToTestimonials() {
+            const testimonials = document.getElementById('testimonials');
+            if (testimonials) {
+                testimonials.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        window.addEventListener('DOMContentLoaded', function() {
+            const params = new URLSearchParams(window.location.search);
+            const title = params.get('title') ? params.get('title').toLowerCase().trim() : '';
+            
+            // Hide both initially
+            document.getElementById('stoic6-block').style.display = 'none';
+            document.getElementById('linkedin-block').style.display = 'none';
+            
+            // Check for LinkedIn-related keywords
+            if (title.includes('linkedin') || title.includes('unlock') || title.includes('power')) {
+                document.getElementById('linkedin-block').style.display = 'flex';
+            } 
+            // Check for Stoic-related keywords
+            else if (title.includes('stoic') || title.includes('the stoic')) {
+                document.getElementById('stoic6-block').style.display = 'flex';
+            }
+            // Fallback (show Stoic 6 by default)
+            else {
+                document.getElementById('stoic6-block').style.display = 'flex';
+            }
+        });
+    </script>
+
+    <!-- Testimonials Section -->
+    <style>
+        .testimonials-container {
+            max-width: 1200px;
+            margin: 60px auto;
+            overflow: hidden;
+            padding: 40px 0;
+            position: relative;
+        }
+        .testimonials-container::before,
+        .testimonials-container::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 150px;
+            z-index: 2;
+            pointer-events: none;
+        }
+        .testimonials-container::before {
+            left: 0;
+            background: linear-gradient(to right, white, transparent);
+        }
+        .testimonials-container::after {
+            right: 0;
+            background: linear-gradient(to left, white, transparent);
+        }
+        .testimonials-track {
+            display: flex;
+            position: relative;
+            width: fit-content;
+            gap: 20px;
+            animation: slideLoop 20s linear infinite;
+        }
+
+        @keyframes slideLoop {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(calc(-400px * 5 - 100px));
+            }
+        }
+        .testimonial-card {
+            flex: 0 0 380px;
+            margin: 0 10px;
+            padding: 30px;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 
+                0 4px 24px 0 rgba(16,185,129,0.08),
+                0 1px 0 rgba(16,185,129,0.02),
+                0 8px 32px rgba(0,0,0,0.05),
+                0 16px 48px rgba(0,0,0,0.03);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid rgba(16,185,129,0.1);
+        }
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 
+                0 8px 32px 0 rgba(16,185,129,0.12),
+                0 1px 0 rgba(16,185,129,0.05),
+                0 16px 48px rgba(0,0,0,0.08);
+        }
+        .testimonial-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            border-bottom: 1px solid rgba(16,185,129,0.1);
+            padding-bottom: 15px;
+        }
+        .testimonial-image {
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            margin-right: 20px;
+            object-fit: cover;
+            border: 3px solid rgba(16,185,129,0.1);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+        .testimonial-info {
+            flex: 1;
+        }
+        .testimonial-name {
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 6px;
+            font-size: 1.4rem;
+            letter-spacing: -0.01em;
+        }
+        .testimonial-stars {
+            color: #FFB800;
+            font-size: 1.3rem;
+            letter-spacing: 2px;
+            text-shadow: 0 2px 4px rgba(255,184,0,0.2);
+        }
+        .testimonial-text {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            font-size: 1.25rem;
+            font-weight: 500;
+            position: relative;
+            padding: 0 10px;
+        }
+        .testimonial-text::before,
+        .testimonial-text::after {
+            content: '"';
+            position: absolute;
+            font-size: 3rem;
+            color: rgba(16,185,129,0.1);
+            font-family: serif;
+            line-height: 1;
+        }
+        .testimonial-text::before {
+            left: -20px;
+            top: -10px;
+        }
+        .testimonial-text::after {
+            right: -20px;
+            bottom: -30px;
+        }
+        
+        @media (max-width: 768px) {
+            .testimonials-container::before,
+            .testimonials-container::after {
+                width: 50px;
+            }
+            .testimonial-card {
+                flex: 0 0 300px;
+            }
+        }
+    </style>
+
+    <div class="testimonials-container" id="testimonials">
+        <div class="testimonials-track">
+            <div class="testimonial-card">
+                <div class="testimonial-header">
+                    <img src="tejasvi.jpeg" alt="Tejasvi Dhull" class="testimonial-image">
+                    <div class="testimonial-info">
+                        <div class="testimonial-name">Tejasvi Dhull</div>
+                        <div class="testimonial-stars">★★★★★</div>
+                    </div>
+                </div>
+                <div class="testimonial-text">I liked how this book gives clear, actionable tips without overcomplicating things. The profile optimization and messaging templates were super helpful. I'd definitely recommend it to anyone trying to grow professionally or build a brand on LinkedIn.</div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-header">
+                    <img src="aryan.png" alt="Aryan Kapur" class="testimonial-image">
+                    <div class="testimonial-info">
+                        <div class="testimonial-name">Aryan Kapur</div>
+                        <div class="testimonial-stars">★★★★</div>
+                    </div>
+                </div>
+                <div class="testimonial-text">For some people like me, 17 pages feel too long to read, even if the content is elaborated and short enough to understand quickly. If you can reduce the number of pages to somewhere around 12, it would be great.</div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-header">
+                    <img src="vanshika.jpg" alt="Vanshika Bhardwaj" class="testimonial-image">
+                    <div class="testimonial-info">
+                        <div class="testimonial-name">Vanshika Bhardwaj</div>
+                        <div class="testimonial-stars">★★★★★</div>
+                    </div>
+                </div>
+                <div class="testimonial-text">The STOIC 6 is a powerful yet beginner-friendly blueprint for any aspiring founder. It distills complex startup principles simple steps from idea validation to funding and scaling. With relatable examples and a motivating tone, this guide feels like a start in entrepreneurship.</div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-header">
+                    <img src="ishita.jpeg" alt="Ishita Umbarkar" class="testimonial-image">
+                    <div class="testimonial-info">
+                        <div class="testimonial-name">Ishita Umbarkar</div>
+                        <div class="testimonial-stars">★★★★</div>
+                    </div>
+                </div>
+                <div class="testimonial-text">Amazing ebook!! It's true about how LinkedIn can be utilized in a great way!</div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-header">
+                    <img src="manav.png" alt="Manav Jangra" class="testimonial-image">
+                    <div class="testimonial-info">
+                        <div class="testimonial-name">Manav Jangra</div>
+                        <div class="testimonial-stars">★★★★</div>
+                    </div>
+                </div>
+                <div class="testimonial-text">A concise and practical guide! 'Unlock the Power of LinkedIn' gave me clear, actionable steps to improve my profile and start meaningful outreach. Highly recommended for anyone serious about LinkedIn networking!</div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-header">
+                    <img src="krishna.PNG" alt="Krishna Shinde" class="testimonial-image">
+                    <div class="testimonial-info">
+                        <div class="testimonial-name">Krishna Shinde</div>
+                        <div class="testimonial-stars">★★★★★</div>
+                    </div>
+                </div>
+                <div class="testimonial-text">Game-Changer for Anyone on LinkedIn!
+Unlock the Power of LinkedIn" is exactly what the name promises. Clear, concise, and incredibly actionable — it helped me optimize my profile and approach networking with a strategic mindset. Whether you're a student, professional, or founder like me, this guide lays out everything you need to stand out and grow your presence. Highly recommend it to anyone serious about making LinkedIn work for them.
+</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add hover pause functionality for testimonials
+            const track = document.querySelector('.testimonials-track');
+            
+            track.addEventListener('mouseenter', function() {
+                this.style.animationPlayState = 'paused';
+            });
+            
+            track.addEventListener('mouseleave', function() {
+                this.style.animationPlayState = 'running';
+            });
+
+            // Clone first 5 items for infinite loop
+            const firstItems = Array.from(track.children).slice(0, 5);
+            firstItems.forEach(item => {
+                const clone = item.cloneNode(true);
+                track.appendChild(clone);
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Ocus Insights</title>
+    <meta name="description" content="Contact Ocus Insights. Send us your queries, feedback, or messages.">
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="contact.css">
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header" style="background: transparent; position: fixed; top: 0; left: 0; width: 100%; z-index: 100; box-shadow: none; border-bottom: none;">
+        <nav class="nav" style="background: transparent; box-shadow: none; border-bottom: none;">
+            <div class="nav__container" style="background: transparent; box-shadow: none; border-bottom: none;">
+                <!-- Logo -->
+                <a href="index.html" class="nav__logo" style="background: transparent;">
+                    <img src="favicon.png" alt="Ocus Insights" class="nav__logo-img">
+                </a>
+                <!-- Navigation Menu -->
+                <div class="nav__menu" id="nav-menu" style="background: transparent;">
+                    <ul class="nav__list" style="background: transparent;">
+                        <li class="nav__item">
+                            <a href="index.html" class="nav__link">Home</a>
+                        <li class="nav__item">
+                            <a href="contact.html" class="nav__link active">Contact</a>
+                        </li>
+                    </ul>
+                    <!-- Close button -->
+                    <div class="nav__close" id="nav-close">
+                        <i class="fas fa-times"></i>
+                    </div>
+                </div>
+                <!-- Toggle button -->
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <section class="contact-hero">
+            <div class="contact-hero__container">
+                <h1 class="contact-hero__title">Contact Us</h1>
+            </div>
+        </section>
+        <section class="contact-section">
+            <div class="contact-section__container">
+                <form class="contact-form" id="contact-form">
+                    <div class="contact-form__group">
+                        <label for="name" class="contact-form__label">Name *</label>
+                        <input type="text" id="name" name="name" class="contact-form__input" placeholder="Your Name" required>
+                    </div>
+                    <div class="contact-form__group">
+                        <label for="email" class="contact-form__label">Email *</label>
+                        <input type="email" id="email" name="email" class="contact-form__input" placeholder="Your Email" required>
+                    </div>
+                    <div class="contact-form__group">
+                        <label for="message" class="contact-form__label">Message *</label>
+                        <textarea id="message" name="message" class="contact-form__textarea" placeholder="Your Message" rows="6" required></textarea>
+                    </div>
+                    <!-- Replace the animated Send Message button with the new HTML -->
+                    <button type="submit" class="contact-submit-btn"><span>Submit</span></button>
+                    <div class="contact-form__message" id="form-message"></div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact-footer">
+        <div class="footer__container">
+            <div class="footer__content">
+                <div class="footer__column">
+                    <h3 class="footer__title">Evolving AI Insights</h3>
+                    <p class="footer__description">Stay updated with the latest in artificial intelligence and technology. New insights delivered weekly.</p>
+                    <div class="footer__social">
+                        <a href="https://creators.spotify.com/pod/show/ocus-insights" class="footer__social-link footer__social-link--spotify"><i class="fab fa-spotify"></i></a>
+                        <a href="https://www.instagram.com/ocus_insights" class="footer__social-link footer__social-link--instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://x.com/ocus_insights" class="footer__social-link footer__social-link--x"><i class="fab fa-x-twitter"></i></a>
+                        <a href="https://www.linkedin.com/company/ocus-insights" class="footer__social-link footer__social-link--linkedin"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                    <p class="footer__copyright">© 2025 Ocus Insights. All rights reserved.</p>
+                </div>
+                <div class="footer__column">
+                    <h4 class="footer__heading">Quick Links</h4>
+                    <ul class="footer__links">
+                        <li><a href="index.html" class="footer__link">Home</a></li>
+                        <li><a href="contact.html" class="footer__link">Contact</a></li>
+                    </ul>
+                    <h4 class="footer__heading">Other</h4>
+                    <ul class="footer__links">
+                        <li><a href="privacy-policy.html" class="footer__link">Privacy Policy</a></li>
+                        <li><a href="terms-of-use.html" class="footer__link">Terms of Use</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <style>
+    .contact-submit-btn {
+        background: #000;
+        color: #fff;
+        border: none;
+        border-radius: 6px;
+        padding: 10px 32px;
+        min-width: 120px;
+        width: auto;
+        font-size: 1rem;
+        font-family: inherit;
+        cursor: pointer;
+        transition: background 0.2s, color 0.2s;
+        display: inline-block;
+    }
+    .contact-submit-btn span {
+        color: #fff;
+    }
+    .contact-submit-btn:hover,
+    .contact-submit-btn:focus {
+        background: #222;
+        color: #fff;
+    }
+    </style>
+    <script>
+    document.getElementById('contact-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        var name = document.getElementById('name').value.trim();
+        var email = document.getElementById('email').value.trim();
+        var message = document.getElementById('message').value.trim();
+        var formMessage = document.getElementById('form-message');
+
+        if (!name || !email || !message) {
+            formMessage.textContent = 'Please fill in all fields.';
+            formMessage.className = 'contact-form__message error';
+            return;
+        }
+
+        // Replace with your actual SheetDB.io API endpoint
+        var SHEETDB_API = 'https://sheetdb.io/api/v1/grw9ksxq19p67';
+
+        fetch(SHEETDB_API, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ data: { name: name, email: email, message: message } })
+        })
+        .then(response => response.json())
+        .then(data => {
+            // Show custom dialog box
+            showSuccessDialog();
+            document.getElementById('contact-form').reset();
+        })
+        .catch(error => {
+            formMessage.textContent = 'There was an error sending your message. Please try again later.';
+            formMessage.className = 'contact-form__message error';
+        });
+    });
+
+    function showSuccessDialog() {
+        // Create dialog overlay
+        var overlay = document.createElement('div');
+        overlay.className = 'dialog-overlay';
+        overlay.innerHTML = `
+            <div class="dialog-box">
+                <div class="dialog-content">
+                    <h2 class="dialog-title">You're in!</h2>
+                    <p class="dialog-message">
+                        Thanks for getting in touch — we've got your message and we'll circle back soon. 
+                        While you wait, why not check out our latest drops and exclusive insights?
+                    </p>
+                    <p class="dialog-signature">
+                        Big things are coming.<br>
+                        Stay tuned.
+                    </p>
+                    <p class="dialog-team">— Team Ocus</p>
+                    <button class="dialog-close" onclick="closeDialog()">Got it!</button>
+                </div>
+            </div>
+        `;
+        document.body.appendChild(overlay);
+    }
+
+    function closeDialog() {
+        var overlay = document.querySelector('.dialog-overlay');
+        if (overlay) {
+            overlay.remove();
+        }
+    }
+    </script>
+</body>
+</html> 

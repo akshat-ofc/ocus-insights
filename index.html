@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ocus Insights</title>
+    <meta name="description" content=" A platform where technology meets innovative artificial intelligence. Get the latest AI insights, updates, and analysis.">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JQQEBPDQZD"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-JQQEBPDQZD');
+</script>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/favicon.png">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Ionicons -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js" defer></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js" defer></script>
+    
+    <!-- anime.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" defer></script>
+</head>
+<body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="loader">
+            <div class="spinner"></div>
+            <p>Loading Ocus Insights...</p>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header" id="header" style="background: transparent; position: fixed; top: 0; left: 0; width: 100%; z-index: 100; box-shadow: none; border-bottom: none;">
+        <nav class="nav" style="background: transparent; box-shadow: none; border-bottom: none;">
+            <div class="nav__container" style="background: transparent; box-shadow: none; border-bottom: none;">
+                <!-- Logo with Admin Access -->
+                <a href="admin.html" class="nav__logo" title="Admin Access" style="background: transparent;">
+                    <img src="favicon.png" alt="Ocus Insights" class="nav__logo-img">
+                </a>
+                <!-- Navigation Menu -->
+                <div class="nav__menu" id="nav-menu" style="background: transparent;">
+                    <ul class="nav__list" style="background: transparent;">
+                        <li class="nav__item">
+                            <a href="#home" class="nav__link active">Home</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="contact.html" class="nav__link">Contact</a>
+                        </li>
+                    </ul>
+                    <!-- Close button -->
+                    <div class="nav__close" id="nav-close">
+                        <i class="fas fa-times"></i>
+                    </div>
+                </div>
+                <!-- Toggle button -->
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <!-- Hero Section -->
+        <section class="hero" id="home">
+            <!-- Hero Content -->
+            <div class="hero__content">
+                <div class="hero__container">
+                    <h1 class="hero__title"> OCUS INSIGHTS</h1>
+                    <p class="hero__subtitle">Your Strategic Edge in Finance, Business, and Beyond</p>
+                    <a href="#posts" class="custom-btn" id="access-btn">Access</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Latest Posts Section -->
+        <section class="posts" id="posts">
+            <div class="posts__container">
+                <div class="posts__header">
+                    <p class="posts__subtitle">eBooks & Research Papers</p>
+                    <h2 class="posts__title">Featured eBooks</h2>
+                </div>
+                
+                <div class="posts__grid" id="ebooks-grid">
+                    <!-- eBook Card 1 -->
+                    <div class="ebook-card" data-title="The Stoic 6" data-author="Ocus Insights Team" data-desc="Explore framework for your startup empire, with real-world case studies and foundational aspects to strengthen core foundation. It can be seen basic, but it is way impactful." data-cover="stoic.png">
+                        <img src="stoic.png" alt="The Stoic 6" class="ebook-card__image">
+                        <div class="ebook-card__content">
+                            <h3 class="ebook-card__title">The Stoic 6</h3>
+                            <p class="ebook-card__desc">Explore framework for your startup empire, with real-world case studies and foundational aspects to stregthen core foundation. It can be seen as basic, but it is way impactful.</p>
+                            <a href="https://drive.google.com/file/d/1xzvE9dL5xCweywmBHUFVH8miYOPcQAjH/view?usp=sharing">
+  <button type="button" class="ebook-card__buy">Invest</button>
+</a>
+                        </div>
+                    </div>
+                    <!-- eBook Card 2 (quote card) -->
+                    <div class="ebook-card">
+                        <div class="ebook-card__quote-aura">
+                            <blockquote class="ebook-card__quote-text">
+                                “Work like hell. I mean, you just have to put in 80 to 100-hour weeks every week. This improves the odds of success.”
+                            </blockquote>
+                            <div class="ebook-card__quote-author">— Elon Musk</div>
+                        </div>
+                    </div>
+                    <!-- eBook Card 3 -->
+                    <div class="ebook-card" data-title="Unlock The Power Of LinkedIn" data-author="Ocus Insights Team" data-desc="Essential reading for networking and navigating the intersection on LinkedIn for professionals." data-price="₹199" data-cover="linkedin.png">
+                        <img src="linkedin.png" alt="Unlock The Power Of LinkedIn" class="ebook-card__image">
+                        <div class="ebook-card__content">
+                            <h3 class="ebook-card__title">Unlock The Power Of LinkedIn</h3>
+                            <p class="ebook-card__desc">Essential reading for networking and navigating the intersection on LinkedIn for professionals.</p>
+                            <button type="button" class="ebook-card__buy">Invest</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Scroll to Testimonials Arrow -->
+            <div class="scroll-arrow" id="scroll-to-testimonials">
+                <div class="arrow-text">View Reviews</div>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+                <!-- Testimonials Section -->
+        <section class="testimonials" id="testimonials">
+            <div class="testimonials__container">
+                <div class="testimonials__header">
+                    <p class="testimonials__subtitle">What Our Readers Say</p>
+                    <h2 class="testimonials__title">Reviews</h2>
+                    <div class="testimonials__decorative-line"></div>
+                </div>
+                
+                <style>
+                    .testimonials-container {
+                        max-width: 1200px;
+                        margin: 60px auto;
+                        overflow: hidden;
+                        padding: 40px 0;
+                        position: relative;
+                        -webkit-mask-image: -webkit-linear-gradient(left, transparent 0%, white 100px, white calc(100% - 100px), transparent 100%);
+                        mask-image: linear-gradient(to right, transparent 0%, white 100px, white calc(100% - 100px), transparent 100%);
+                    }
+                    .testimonials-track {
+                        display: flex;
+                        position: relative;
+                        gap: 20px;
+                        animation: slideLoop 20s linear infinite;
+                        will-change: transform;
+                        transform: translateZ(0);
+                    }
+                    .testimonials-track::after {
+                        content: "";
+                        display: block;
+                        width: 20px;
+                        flex-shrink: 0;
+                    }
+                    @keyframes slideLoop {
+                        0% {
+                            transform: translateX(0);
+                        }
+                        100% {
+                            transform: translateX(calc(-180px * 6));
+                        }
+                    }
+                    .testimonials-track:hover {
+                        animation-play-state: paused;
+                    }
+                    .testimonial-card {
+                        flex: 0 0 380px;
+                        transform: translateZ(0);
+                        backface-visibility: hidden;
+                    }
+                    @media (prefers-reduced-motion: reduce) {
+                        .testimonials-track {
+                            animation: none;
+                        }
+                    }
+                </style>
+                
+                <div class="testimonials-container">
+                    <div class="testimonials-track">
+                    <!-- Original Cards -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-header">
+                            <img src="aryan.PNG" alt="Aryan Kapur" class="testimonial-image">
+                            <div class="testimonial-info">
+                                <div class="testimonial-name">Aryan Kapur</div>
+                                <div class="testimonial-stars">★★★★</div>
+                            </div>
+                        </div>
+                        <p class="testimonial-text">"For some people like me, 17 pages feel too long to read, even if the content is elaborated and short enough to understand quickly. If you can reduce the number of pages to somewhere around 12, it would be great. However, if you wish to publish a longer e-book, you can either elaborate the content more, or include some more techniques. 17 pages feel a bit not too long, and not too short."</p>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="testimonial-header">
+                            <img src="vanshika.jpg" alt="Vanshika Bhardwaj" class="testimonial-image">
+                            <div class="testimonial-info">
+                                <div class="testimonial-name">Vanshika Bhardwaj</div>
+                                <div class="testimonial-stars">★★★★★</div>
+                            </div>
+                        </div>
+                        <p class="testimonial-text">"The STOIC 6 is a powerful yet beginner-friendly blueprint for any aspiring founder. It distills complex startup principles simple steps from idea validation to funding and scaling. With relatable examples and a motivating tone, this guide feels like a start in entrepreneurship. A one time read for sure....."</p>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="testimonial-header">
+                            <img src="ishita.jpeg" alt="Ishita Umbarkar" class="testimonial-image">
+                            <div class="testimonial-info">
+                                <div class="testimonial-name">Ishita Umbarkar</div>
+                                <div class="testimonial-stars">★★★★</div>
+                            </div>
+                        </div>
+                        <p class="testimonial-text">"Amazing ebook!! It’s true about how LinkedIn can be utilized in a great way!"</p>
+                    </div>
+
+                    <!-- Duplicate Cards for Seamless Loop -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-header">
+                            <img src="manav.PNG" alt="Manav Jangra" class="testimonial-image">
+                            <div class="testimonial-info">
+                                <div class="testimonial-name">Manav Jangra</div>
+                                <div class="testimonial-stars">★★★★</div>
+                            </div>
+                        </div>
+                        <p class="testimonial-text">"A concise and practical guide! ‘Unlock the Power of LinkedIn’ gave me clear, actionable steps to improve my profile and start meaningful outreach. Highly recommended for anyone serious about LinkedIn networking 👍🏻!!!"</p>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="testimonial-header">
+                            <img src="tejasvi.jpeg" alt="Tejasvi Dhull" class="testimonial-image">
+                            <div class="testimonial-info">
+                                <div class="testimonial-name">Tejasvi Dhull</div>
+                                <div class="testimonial-stars">★★★★★</div>
+                            </div>
+                        </div>
+                        <p class="testimonial-text">"I liked how this book gives clear, actionable tips without overcomplicating things. The profile optimization and messaging templates were super helpful. I’d definitely recommend it to anyone trying to grow professionally or build a brand on LinkedIn."</p>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="testimonial-header">
+                            <img src="krishna.PNG" alt="Krishna Shinde" class="testimonial-image">
+                            <div class="testimonial-info">
+                                <div class="testimonial-name">Krishna Shinde</div>
+                                <div class="testimonial-stars">★★★★★</div>
+                            </div>
+                        </div>
+                        <p class="testimonial-text">"Game-Changer for Anyone on LinkedIn!"
+"Unlock the Power of LinkedIn" is exactly what the name promises. Clear, concise, and incredibly actionable — it helped me optimize my profile and approach networking with a strategic mindset. Whether you're a student, professional, or founder like me, this guide lays out everything you need to stand out and grow your presence. Highly recommend it to anyone serious about making LinkedIn work for them.
+</p>
+                    </div>
+
+                    <!-- Duplicate Cards for Seamless Loop -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-header">
+                            <img src="aryan.PNG" alt="Aryan Kapur" class="testimonial-image">
+                            <div class="testimonial-info">
+                                <div class="testimonial-name">Aryan Kapur</div>
+                                <div class="testimonial-stars">★★★★</div>
+                            </div>
+                        </div>
+                        <p class="testimonial-text">" For some people like me, 17 pages feel too long to read, even if the content is elaborated and short enough to understand quickly. If you can reduce the number of pages to somewhere around 12, it would be great. However, if you wish to publish a longer e-book, you can either elaborate the content more, or include some more techniques. 17 pages feel a bit not too long, and not too short"</p>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="testimonial-header">
+                            <img src="vanshika.jpg" alt="Vanshika Bhardwaj" class="testimonial-image">
+                            <div class="testimonial-info">
+                                <div class="testimonial-name">Vanshika Bhardwaj</div>
+                                <div class="testimonial-stars">★★★★★</div>
+                            </div>
+                        </div>
+                        <p class="testimonial-text">"Finally, AI insights that cut through the hype. Every issue delivers genuine strategic value that impacts our decision-making."</p>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="testimonial-header">
+                            <img src="ishita.jpeg" alt="Ishita Umbarkar" class="testimonial-image">
+                            <div class="testimonial-info">
+                                <div class="testimonial-name">Ishita Umbarkar</div>
+                                <div class="testimonial-stars">★★★★</div>
+                            </div>
+                        </div>
+                        <p class="testimonial-text">"Amazing ebook!! It's true about how LinkedIn can be utilized in a great way!"</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Benefits Section -->
+        <section class="benefits" id="benefits">
+            <div class="benefits__container">
+                <div class="benefits__header">
+                    <p class="benefits__subtitle">Updates</p>
+                    <h2 class="benefits__title">What value you will get?</h2>
+                    <div class="benefits__decorative-line"></div>
+                </div>
+                
+                <div class="benefits__grid">
+                    <div class="benefit-card" data-benefit="1">
+                        <div class="benefit-card__number">01</div>
+                        <h3 class="benefit-card__title">Clarity Boost</h3>
+                        <div class="benefit-card__underline"></div>
+                        <p class="benefit-card__description">
+                            Avoid content overwhelm with only what matters — clean, sharp, relevant intelligence that drives clarity.
+                        </p>
+                    </div>
+
+                    <div class="benefit-card" data-benefit="2">
+                        <div class="benefit-card__number">02</div>
+                        <h3 class="benefit-card__title">Action Focused</h3>
+                        <div class="benefit-card__underline"></div>
+                        <p class="benefit-card__description">
+                            Every element is built to move you forward — theory and practice, just practical next steps.
+                        </p>
+                    </div>
+
+                    <div class="benefit-card" data-benefit="3">
+                        <div class="benefit-card__number">03</div>
+                        <h3 class="benefit-card__title">No fluff</h3>
+                        <div class="benefit-card__underline"></div>
+                        <p class="benefit-card__description">
+                            Straight to the point — only valuable insights, no jargon, filler, or unnecessary information included.
+                        </p>
+                    </div>
+
+                    <div class="benefit-card" data-benefit="4">
+                        <div class="benefit-card__number">04</div>
+                        <h3 class="benefit-card__title">Time Optimized</h3>
+                        <div class="benefit-card__underline"></div>
+                        <p class="benefit-card__description">
+                            Five minutes of focused reading that saves hours of research and keeps you ahead of trends.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <div class="footer__container" style="position: relative;">
+            <div class="footer__content">
+                <!-- Column 1: Brand & Social -->
+                <div class="footer__column">
+                    <h3 class="footer__title">Ocus Insights</h3>
+                    <p class="footer__description">
+                        Stay updated with the latest in Finance, Productivity and Business multiverse. 
+                        New insights delivered weekly.
+                    </p>
+                    
+                    <div class="footer__social">
+                        <a href="https://creators.spotify.com/pod/show/ocus-insights" class="footer__social-link footer__social-link--spotify" target="_blank" rel="noopener noreferrer"><i class="fab fa-spotify"></i></a>
+                        <a href="https://www.instagram.com/ocus.insights" class="footer__social-link footer__social-link--instagram" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+                        <a href="https://x.com/ocus_insights" class="footer__social-link footer__social-link--x" target="_blank" rel="noopener noreferrer"><i class="fab fa-x-twitter"></i></a>
+                        <a href="https://www.linkedin.com/company/ocus-insights" class="footer__social-link footer__social-link--linkedin" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                    
+                    <p class="footer__copyright">
+                        © 2025 Ocus Insights. All rights reserved.
+                    </p>
+                </div>
+
+                <!-- Column 2: Quick Links -->
+                <div class="footer__column">
+                    <h4 class="footer__heading">Quick Links</h4>
+                    <ul class="footer__links">
+                        <li><a href="#home" class="footer__link">Home</a></li>
+                        <li><a href="contact.html" class="footer__link">Contact</a></li>
+                    </ul>
+                    
+                    <h4 class="footer__heading">Other</h4>
+                    <ul class="footer__links">
+                        <li><a href="privacy-policy.html" class="footer__link">Privacy Policy</a></li>
+                        <li><a href="terms-of-use.html" class="footer__link">Terms of Use</a></li>
+                    </ul>
+                </div>
+
+                    <p class="footer__powered">Powered by <strong>Ocus Insights</strong></p>
+        <img src="Ocus.png" alt="Ocus Logo" style="position: absolute; right: 90px; top: 30px; max-width: 220px; width: 100%; height: auto; z-index: 10;">
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+    <script type="module" src="main.js" defer></script>
+</body>
+</html>
