@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ocus Insights</title>
+    <meta name="description" content=" A platform where technology meets innovative artificial intelligence. Get the latest AI insights, updates, and analysis.">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JQQEBPDQZD"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-JQQEBPDQZD');
+</script>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/favicon.png">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Razorpay is loaded on demand from js/payments.js -->
+    
+    <!-- Ionicons -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js" defer></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js" defer></script>
+    
+    <!-- anime.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" defer></script>
+</head>
+<body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="loader">
+            <div class="spinner"></div>
+            <p>Loading Ocus Insights...</p>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header" id="header" style="background: transparent; position: fixed; top: 0; left: 0; width: 100%; z-index: 100; box-shadow: none; border-bottom: none;">
+        <nav class="nav" style="background: transparent; box-shadow: none; border-bottom: none;">
+            <div class="nav__container" style="background: transparent; box-shadow: none; border-bottom: none;">
+                <!-- Logo with Admin Access -->
+                <a href="admin.html" class="nav__logo" title="Admin Access" style="background: transparent;">
+                    <img src="favicon.png" alt="Ocus Insights" class="nav__logo-img">
+                </a>
+                <!-- Navigation Menu -->
+                <div class="nav__menu" id="nav-menu" style="background: transparent;">
+                    <ul class="nav__list" style="background: transparent;">
+                        <li class="nav__item">
+                            <a href="#home" class="nav__link active">Home</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="contact.html" class="nav__link">Contact</a>
+                        </li>
+                    </ul>
+                    <!-- Close button -->
+                    <div class="nav__close" id="nav-close">
+                        <i class="fas fa-times"></i>
+                    </div>
+                </div>
+                <!-- Toggle button -->
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <!-- Hero Section -->
+        <section class="hero" id="home">
+            <!-- Hero Content -->
+            <div class="hero__content">
+                <div class="hero__container">
+                    <h1 class="hero__title"> OCUS INSIGHTS</h1>
+                    <p class="hero__subtitle">Your Strategic Edge in Finance, Business, and Beyond</p>
+                    <a href="#posts" class="custom-btn" id="access-btn">Access</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Latest Posts Section -->
+        <section class="posts" id="posts">
+            <div class="posts__container">
+                <div class="posts__header">
+                    <p class="posts__subtitle">eBooks & Research Papers</p>
+                    <h2 class="posts__title">Featured eBooks</h2>
+                </div>
+                
+                <div class="posts__grid" id="ebooks-grid">
+                    <!-- eBook Card 1 -->
+                    <div class="ebook-card" data-title="The Stoic 6" data-author="Ocus Insights Team" data-desc="Explore framework for your startup empire, with real-world case studies and foundational aspects to strengthen core foundation. It can be seen basic, but it is way impactful." data-cover="stoic.png">
+                        <img src="stoic.png" alt="The Stoic 6" class="ebook-card__image">
+                        <div class="ebook-card__content">
+                            <h3 class="ebook-card__title">The Stoic 6</h3>
+                            <p class="ebook-card__desc">Explore framework for your startup empire, with real-world case studies and foundational aspects to stregthen core foundation. It can be seen as basic, but it is way impactful.</p>
+                            <p class="ebook-card__price" aria-label="Price">₹50</p>
+                            <button type="button" class="ebook-card__buy" data-razorpay-product="stoic-6">Invest</button>
+                        </div>
+                    </div>
+                    <!-- eBook Card 2 (quote card) -->
+                    <div class="ebook-card">
+                        <div class="ebook-card__quote-aura">
+                            <blockquote class="ebook-card__quote-text">
+                                “Work like hell. I mean, you just have to put in 80 to 100-hour weeks every week. This improves the odds of success.”
+                            </blockquote>
+                            <div class="ebook-card__quote-author">— Elon Musk</div>
+                        </div>
+                    </div>
+                    <!-- eBook Card 3 -->
+                    <div class="ebook-card" data-title="Unlock The Power Of LinkedIn" data-author="Ocus Insights Team" data-desc="Essential reading for networking and navigating the intersection on LinkedIn for professionals." data-cover="linkedin.png">
+                        <img src="linkedin.png" alt="Unlock The Power Of LinkedIn" class="ebook-card__image">
+                        <div class="ebook-card__content">
+                            <h3 class="ebook-card__title">Unlock The Power Of LinkedIn</h3>
+                            <p class="ebook-card__desc">Essential reading for networking and navigating the intersection on LinkedIn for professionals.</p>
+                            <p class="ebook-card__price" aria-label="Price">₹100</p>
+                            <button type="button" class="ebook-card__buy" data-razorpay-product="linkedin-power">Invest</button>
+                        </div>
+                    </div>
+                    <!-- eBook Card 4 — AI Side Hustle Guide 2026 -->
+                    <div class="ebook-card" data-title="AI Side Hustle Guide 2026" data-author="Ocus Insights Team" data-desc="Practical ideas and workflows to build income streams with AI tools in 2026 — without quitting your day job." data-cover="cover.jpg">
+                        <img src="cover.jpg" alt="AI Side Hustle Guide 2026" class="ebook-card__image ebook-card__image--cover">
+                        <div class="ebook-card__content">
+                            <h3 class="ebook-card__title">AI Side Hustle Guide 2026</h3>
+                            <p class="ebook-card__desc">Practical ideas and workflows to build income streams with AI tools in 2026 — without quitting your day job.</p>
+                            <p class="ebook-card__price" aria-label="Price">₹100</p>
+                            <button type="button" class="ebook-card__buy" data-razorpay-product="ai-side-hustle-2026">Invest</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Scroll to Testimonials Arrow -->
+            <div class="scroll-arrow" id="scroll-to-testimonials">
+                <div class="arrow-text">View Reviews</div>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+                <!-- Testimonials Section -->
+        <section class="testimonials" id="testimonials">
+            <div class="testimonials__container">
+                <div class="testimonials__header">
+                    <p class="testimonials__subtitle">What Our Readers Say</p>
+                    <h2 class="testimonials__title">Reviews</h2>
+                    <div class="testimonials__decorative-line"></div>
+                </div>
+                
+                <style>
+                    .testimonials-container {
+                        max-width: 1200px;
+                        margin: 60px auto;
+                        overflow: hidden;
+                        padding: 40px 0;
+                        position: relative;
+                        -webkit-mask-image: -webkit-linear-gradient(left, transparent 0%, white 100px, white calc(100% - 100px), transparent 100%);
+                        mask-image: linear-gradient(to right, transparent 0%, white 100px, white calc(100% - 100px), transparent 100%);
+                    }
+                    .testimonials-track {
+                        display: flex;
+                        position: relative;
+                        gap: 20px;
+                        width: max-content;
+                        animation: none;
+                        will-change: transform;
+                        transform: translateZ(0);
+                    }
+                    .testimonials-track.marquee-active {
+                        animation: testimonialMarquee 55s linear infinite;
+                    }
+                    @keyframes testimonialMarquee {
+                        from {
+                            transform: translateX(0);
+                        }
+                        to {
+                            transform: translateX(-50%);
+                        }
+                    }
+                    .testimonials-track:hover {
+                        animation-play-state: paused;
+                    }
+                    .testimonial-card {
+                        flex: 0 0 380px;
+                        max-width: 380px;
+                        transform: translateZ(0);
+                        backface-visibility: hidden;
+                    }
+                    @media (prefers-reduced-motion: reduce) {
+                        .testimonials-track,
+                        .testimonials-track.marquee-active {
+                            animation: none !important;
+                        }
+                    }
+                    @media screen and (max-width: 768px) {
+                        .testimonials-container {
+                            margin: 40px auto;
+                            padding: 24px 0;
+                            -webkit-mask-image: -webkit-linear-gradient(left, transparent 0%, white 40px, white calc(100% - 40px), transparent 100%);
+                            mask-image: linear-gradient(to right, transparent 0%, white 40px, white calc(100% - 40px), transparent 100%);
+                        }
+                        .testimonials-track {
+                            gap: 16px;
+                        }
+                        .testimonial-card {
+                            flex: 0 0 min(320px, calc(100vw - 2.5rem));
+                            max-width: min(320px, calc(100vw - 2.5rem));
+                            padding: 2rem;
+                        }
+                    }
+                    @media screen and (max-width: 480px) {
+                        .testimonial-card {
+                            flex: 0 0 min(280px, calc(100vw - 1.5rem));
+                            max-width: min(280px, calc(100vw - 1.5rem));
+                            padding: 1.5rem;
+                        }
+                    }
+                </style>
+                
+                <div class="testimonials-container">
+                    <div class="testimonials-track">
+                    <!-- Original Cards -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-header">
+                            <img src="aryan.PNG" alt="Aryan Kapur" class="testimonial-image">
+                            <div class="testimonial-info">
+                                <div class="testimonial-name">Aryan Kapur</div>
+                                <div class="testimonial-stars">★★★★</div>
+                            </div>
+                        </div>
+                        <p class="testimonial-text">"Wasn't expecting much for ₹50 honestly but this hit different. The 6 principles are dead simple but they made me rethink how I'm approaching my startup. Read it in one sitting and had notes all over my phone by the end."</p>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="testimonial-header">
+                            <img src="vanshika.jpg" alt="Vanshika Bhardwaj" class="testimonial-image">
+                            <div class="testimonial-info">
+                                <div class="testimonial-name">Vanshika Bhardwaj</div>
+                                <div class="testimonial-stars">★★★★★</div>
+                            </div>
+                        </div>
+                        <p class="testimonial-text">"I've read a lot of startup content and most of it feels recycled. The Stoic 6 actually cuts through the noise. The case studies felt real, not textbook. Would genuinely recommend to anyone starting out or even just thinking about it."</p>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="testimonial-header">
+                            <img src="ishita.jpeg" alt="Ishita Umbarkar" class="testimonial-image">
+                            <div class="testimonial-info">
+                                <div class="testimonial-name">Ishita Umbarkar</div>
+                                <div class="testimonial-stars">★★★★</div>
+                            </div>
+                        </div>
+                        <p class="testimonial-text">"Was skeptical at first but the AI Side Hustle guide gave me ideas I could actually start the same week. No fluff, no vague advice. The AI tool breakdowns are super practical, especially if you're starting from zero."</p>
+                    </div>
+
+                    <!-- Duplicate Cards for Seamless Loop -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-header">
+                            <img src="manav.PNG" alt="Manav Jangra" class="testimonial-image">
+                            <div class="testimonial-info">
+                                <div class="testimonial-name">Manav Jangra</div>
+                                <div class="testimonial-stars">★★★★</div>
+                            </div>
+                        </div>
+                        <p class="testimonial-text">"My profile was basically a digital CV before this. After following the steps my connection requests started getting accepted and I landed two conversations with people I'd been trying to reach for months. Really works."</p>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="testimonial-header">
+                            <img src="tejasvi.jpeg" alt="Tejasvi Dhull" class="testimonial-image">
+                            <div class="testimonial-info">
+                                <div class="testimonial-name">Tejasvi Dhull</div>
+                                <div class="testimonial-stars">★★★★★</div>
+                            </div>
+                        </div>
+                        <p class="testimonial-text">"The messaging templates in the LinkedIn guide alone are worth the price. Used one last week and got a reply from someone who'd ignored 3 follow-ups. Practical, no nonsense, straight to the point."</p>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="testimonial-header">
+                            <img src="krishna.PNG" alt="Krishna Shinde" class="testimonial-image">
+                            <div class="testimonial-info">
+                                <div class="testimonial-name">Krishna Shinde</div>
+                                <div class="testimonial-stars">★★★★★</div>
+                            </div>
+                        </div>
+                        <p class="testimonial-text">"Best thing I bought this year. Was looking for ways to actually use all the AI tools everyone's talking about and this guide shows you HOW, not just what exists. Already running one of the workflows from the guide and it's saving me hours every week."</p>
+                    </div>
+
+                    <!-- Duplicate Cards for Seamless Loop -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-header">
+                            <img src="aryan.PNG" alt="Aryan Kapur" class="testimonial-image">
+                            <div class="testimonial-info">
+                                <div class="testimonial-name">Aryan Kapur</div>
+                                <div class="testimonial-stars">★★★★</div>
+                            </div>
+                        </div>
+                        <p class="testimonial-text">"Wasn't expecting much for ₹50 honestly but this hit different. The 6 principles are dead simple but they made me rethink how I'm approaching my startup. Read it in one sitting and had notes all over my phone by the end."</p>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="testimonial-header">
+                            <img src="vanshika.jpg" alt="Vanshika Bhardwaj" class="testimonial-image">
+                            <div class="testimonial-info">
+                                <div class="testimonial-name">Vanshika Bhardwaj</div>
+                                <div class="testimonial-stars">★★★★★</div>
+                            </div>
+                        </div>
+                        <p class="testimonial-text">"I've read a lot of startup content and most of it feels recycled. The Stoic 6 actually cuts through the noise. The case studies felt real, not textbook. Would genuinely recommend to anyone starting out or even just thinking about it."</p>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="testimonial-header">
+                            <img src="ishita.jpeg" alt="Ishita Umbarkar" class="testimonial-image">
+                            <div class="testimonial-info">
+                                <div class="testimonial-name">Ishita Umbarkar</div>
+                                <div class="testimonial-stars">★★★★</div>
+                            </div>
+                        </div>
+                        <p class="testimonial-text">"Was skeptical at first but the AI Side Hustle guide gave me ideas I could actually start the same week. No fluff, no vague advice. The AI tool breakdowns are super practical, especially if you're starting from zero."</p>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Benefits Section -->
+        <section class="benefits" id="benefits">
+            <div class="benefits__container">
+                <div class="benefits__header">
+                    <p class="benefits__subtitle">Updates</p>
+                    <h2 class="benefits__title">What value you will get?</h2>
+                    <div class="benefits__decorative-line"></div>
+                </div>
+                
+                <div class="benefits__grid">
+                    <div class="benefit-card" data-benefit="1">
+                        <div class="benefit-card__number">01</div>
+                        <h3 class="benefit-card__title">Clarity Boost</h3>
+                        <div class="benefit-card__underline"></div>
+                        <p class="benefit-card__description">
+                            Avoid content overwhelm with only what matters — clean, sharp, relevant intelligence that drives clarity.
+                        </p>
+                    </div>
+
+                    <div class="benefit-card" data-benefit="2">
+                        <div class="benefit-card__number">02</div>
+                        <h3 class="benefit-card__title">Action Focused</h3>
+                        <div class="benefit-card__underline"></div>
+                        <p class="benefit-card__description">
+                            Every element is built to move you forward — theory and practice, just practical next steps.
+                        </p>
+                    </div>
+
+                    <div class="benefit-card" data-benefit="3">
+                        <div class="benefit-card__number">03</div>
+                        <h3 class="benefit-card__title">No fluff</h3>
+                        <div class="benefit-card__underline"></div>
+                        <p class="benefit-card__description">
+                            Straight to the point — only valuable insights, no jargon, filler, or unnecessary information included.
+                        </p>
+                    </div>
+
+                    <div class="benefit-card" data-benefit="4">
+                        <div class="benefit-card__number">04</div>
+                        <h3 class="benefit-card__title">Time Optimized</h3>
+                        <div class="benefit-card__underline"></div>
+                        <p class="benefit-card__description">
+                            Five minutes of focused reading that saves hours of research and keeps you ahead of trends.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <div class="footer__container footer__container--mark">
+            <div class="footer__content">
+                <!-- Column 1: Brand & Social -->
+                <div class="footer__column">
+                    <h3 class="footer__title">Ocus Insights</h3>
+                    <p class="footer__description">
+                        Stay updated with the latest in Finance, Productivity and Business multiverse. 
+                        New insights delivered weekly.
+                    </p>
+                    
+                    <div class="footer__social">
+                        <a href="https://creators.spotify.com/pod/show/ocus-insights" class="footer__social-link footer__social-link--spotify" target="_blank" rel="noopener noreferrer"><i class="fab fa-spotify"></i></a>
+                        <a href="https://www.instagram.com/ocus.insights" class="footer__social-link footer__social-link--instagram" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+                        <a href="https://x.com/ocus_insights" class="footer__social-link footer__social-link--x" target="_blank" rel="noopener noreferrer"><i class="fab fa-x-twitter"></i></a>
+                        <a href="https://www.linkedin.com/company/ocus-insights" class="footer__social-link footer__social-link--linkedin" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                    
+                    <p class="footer__copyright">
+                        © 2025 Ocus Insights. All rights reserved.
+                    </p>
+                </div>
+
+                <!-- Column 2: Quick Links -->
+                <div class="footer__column">
+                    <h4 class="footer__heading">Quick Links</h4>
+                    <ul class="footer__links">
+                        <li><a href="#home" class="footer__link">Home</a></li>
+                        <li><a href="contact.html" class="footer__link">Contact</a></li>
+                    </ul>
+                    
+                    <h4 class="footer__heading">Other</h4>
+                    <ul class="footer__links">
+                        <li><a href="privacy-policy.html" class="footer__link">Privacy Policy</a></li>
+                        <li><a href="terms-of-use.html" class="footer__link">Terms of Use</a></li>
+                    </ul>
+                </div>
+
+            </div>
+            <p class="footer__powered">Powered by <strong>Ocus Insights</strong></p>
+            <img src="ocus.png" alt="Ocus" class="footer__ocus-mark" width="220" height="80" decoding="async">
+        </div>
+    </footer>
+    <!-- TODO after Render deploy: replace with your real Render URL e.g. https://ocus-razorpay.onrender.com -->
+    <script>window.OCUS_PAYMENTS_API = 'https://ocus-razorpay.onrender.com';</script>
+    <script src="js/payments.js" defer></script>
+    <script type="module" src="main.js" defer></script>
+</body>
+</html>

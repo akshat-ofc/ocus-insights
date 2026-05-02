@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your download — Ocus Insights</title>
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="stylesheet" href="/style.css">
+  <style>
+    .dl-wrap { max-width: 640px; margin: 8rem auto 4rem; padding: 0 1.5rem; text-align: center; }
+    .dl-wrap h1 { margin-bottom: 0.75rem; }
+    .dl-wrap p { opacity: 0.85; margin-bottom: 1.5rem; }
+    .dl-actions { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; }
+    .dl-actions a {
+      display: inline-block; padding: 0.85rem 1.25rem; border-radius: 0.5rem;
+      background: #0f766e; color: #fff; text-decoration: none; font-weight: 600;
+    }
+    .dl-actions a.secondary { background: transparent; color: inherit; border: 1px solid rgba(255,255,255,0.25); }
+  </style>
+</head>
+<body>
+  <main class="dl-wrap">
+    <h1>Thank you for your purchase</h1>
+    <p id="dl-sub">Your file should begin downloading automatically. If it does not, use the button below.</p>
+    <div class="dl-actions">
+      <a id="dl-link" href="/">Download PDF</a>
+      <a class="secondary" href="/index.html">Back to home</a>
+    </div>
+  </main>
+  <script>
+    (function () {
+      var raw = null;
+      try {
+        raw = sessionStorage.getItem('ocus_download');
+      } catch (e) {}
+      var link = document.getElementById('dl-link');
+      var sub = document.getElementById('dl-sub');
+
+      if (!raw) {
+        sub.textContent = 'No download session found. If you already paid, return from the payment success step or contact support.';
+        link.href = '/index.html';
+        link.textContent = 'Go to home';
+        return;
+      }
+
+      try {
+        sessionStorage.removeItem('ocus_download');
+      } catch (e) {}
+
+      var data = {};
+      try {
+        data = JSON.parse(raw) || {};
+      } catch (e) {}
+
+      if (!data.url) {
+        sub.textContent = 'Download link missing. Please contact support with your payment receipt.';
+        link.href = '/index.html';
+        link.textContent = 'Go to home';
+        return;
+      }
+
+      link.href = data.url;
+      link.setAttribute('download', '');
+      link.textContent = 'Download PDF again';
+
+      // Same-origin PDF: programmatic click often saves a copy without leaving this page.
+      try {
+        var auto = document.createElement('a');
+        auto.href = data.url;
+        auto.download = (data.name || 'ocus-ebook').replace(/\s+/g, '-').toLowerCase() + '.pdf';
+        auto.rel = 'noopener';
+        document.body.appendChild(auto);
+        auto.click();
+        document.body.removeChild(auto);
+      } catch (e) {
+        window.location.href = data.url;
+      }
+    })();
+  </script>
+</body>
+</html>
